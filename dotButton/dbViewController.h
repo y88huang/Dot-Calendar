@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "dbContentViewController.h"
+#import "myDot.h"
 
-@interface dbViewController : UIViewController
-
+@interface dbViewController : UIViewController <UIPageViewControllerDataSource>
+@property (strong,nonatomic) UIPageViewController *pageViewController;
+@property (strong,nonatomic) UIViewController *pageContentViewController;
+@property (strong, nonatomic) UILabel *label;
+@property (strong, nonatomic) NSArray *month;
 @end

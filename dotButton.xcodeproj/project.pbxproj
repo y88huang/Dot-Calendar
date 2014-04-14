@@ -21,6 +21,8 @@
 		698F862018F89806004923CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F860218F89806004923CD /* UIKit.framework */; };
 		698F862818F89806004923CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698F862618F89806004923CD /* InfoPlist.strings */; };
 		698F862A18F89806004923CD /* dotButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F862918F89806004923CD /* dotButtonTests.m */; };
+		698F863E18F9BDAF004923CD /* myDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F863D18F9BDAF004923CD /* myDot.m */; };
+		698F864118FB678C004923CD /* dbContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F864018FB678C004923CD /* dbContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		698F862518F89806004923CD /* dotButtonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dotButtonTests-Info.plist"; sourceTree = "<group>"; };
 		698F862718F89806004923CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		698F862918F89806004923CD /* dotButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dotButtonTests.m; sourceTree = "<group>"; };
+		698F863C18F9BDAF004923CD /* myDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myDot.h; sourceTree = "<group>"; };
+		698F863D18F9BDAF004923CD /* myDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myDot.m; sourceTree = "<group>"; };
+		698F863F18FB678C004923CD /* dbContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbContentViewController.h; sourceTree = "<group>"; };
+		698F864018FB678C004923CD /* dbContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +121,12 @@
 				698F860D18F89806004923CD /* dbAppDelegate.h */,
 				698F860E18F89806004923CD /* dbAppDelegate.m */,
 				698F861018F89806004923CD /* Main.storyboard */,
+				698F863C18F9BDAF004923CD /* myDot.h */,
+				698F863D18F9BDAF004923CD /* myDot.m */,
 				698F861318F89806004923CD /* dbViewController.h */,
 				698F861418F89806004923CD /* dbViewController.m */,
+				698F863F18FB678C004923CD /* dbContentViewController.h */,
+				698F864018FB678C004923CD /* dbContentViewController.m */,
 				698F861618F89806004923CD /* Images.xcassets */,
 				698F860518F89806004923CD /* Supporting Files */,
 			);
@@ -250,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698F864118FB678C004923CD /* dbContentViewController.m in Sources */,
 				698F860F18F89806004923CD /* dbAppDelegate.m in Sources */,
 				698F861518F89806004923CD /* dbViewController.m in Sources */,
 				698F860B18F89806004923CD /* main.m in Sources */,
+				698F863E18F9BDAF004923CD /* myDot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
