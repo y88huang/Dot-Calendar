@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "myDot.h"
+#import "dbClockView.h"
+#import "GPUImage.h"
 @interface dbContentViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;
 @property (weak,nonatomic) NSString  *monthTitle;

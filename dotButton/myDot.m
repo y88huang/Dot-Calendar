@@ -16,6 +16,8 @@
     if (self) {
         // Initialization code
         self.layer.cornerRadius = frame.size.width/2.0;
+        UIColor *myColor = [UIColor colorWithRed:255/255.0 green:52/255.0 blue:74/255.0 alpha:1.0];
+        [self setBackgroundColor: myColor];
     }
     return self;
 }

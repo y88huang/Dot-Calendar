@@ -72,6 +72,7 @@
             [dotCollection addObject:tmpDot];
             [self.dotContainer addSubview:tmpDot];
         }
+       
     }
 }
 #pragma mark - touchEvent
@@ -93,8 +94,10 @@
         dot.transform= CGAffineTransformMakeScale(1.0, 1.0);
     } completion:nil];
     [self huddleUpForIndex:index];
-    NSLog(@"%f",dot.frame.size.height);
-    NSLog(@"%f",dot.bounds.size.height);
+    
+    //blur background and show clock view
+    [self generateBluredBackground];
+    //Clock View.
 }
 
 
@@ -188,5 +191,45 @@
     [UIView animateWithDuration:0.5 animations:^(){
         button.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, x,y);
     }completion:nil];
+}
+
+#pragma mark ClockView Generator
+
+-(void)generateBluredBackground
+{
+    
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [self.view drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
+    UIImage *snapShotImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    GPUImageiOSBlurFilter *filter = [GPUImageiOSBlurFilter new];
+    UIImage *bluredSnapShotImage = [filter imageByFilteringImage:snapShotImage];
+    UIButton *fakeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    fakeButton.frame = self.view.frame;
+    [fakeButton setBackgroundImage:bluredSnapShotImage forState:UIControlStateNormal];
+    [fakeButton addTarget:self action:@selector(backgroundButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:fakeButton];
+    fakeButton.alpha = 0.0;
+    [UIView animateWithDuration:1.0 delay:0.0 options:0 animations:^(){
+        fakeButton.alpha = 1.0;
+    } completion:nil];
+    
+    dbClockView *clock = [[dbClockView alloc] initWithView:self.view];
+    clock.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    [fakeButton addSubview:clock];
+    [UIView animateWithDuration:0.5 delay:0.0 options:0 animations:^(){
+        clock.transform= CGAffineTransformMakeScale(1.0, 1.0);
+    } completion:nil];
+//    [clock becomeFirstResponder];
+}
+
+-(void)backgroundButtonTouchUp:(UIButton *)sender
+{
+    
+    [UIView animateWithDuration:1.0 delay:0.0 options:0 animations:^(){
+        sender.alpha = 0.0;
+    } completion:nil];
+    
+    [sender removeFromSuperview];
 }
 @end
